@@ -31,6 +31,7 @@ def checkurl(url):
 
 if __name__ == "__main__":
     p = Pool(processes=100)
+    #The above line defines the number of consurrent threads you want to run
     result = p.map(checkurl, urls)
 
 print("done in : ", time.time()-start)
