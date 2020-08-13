@@ -1,17 +1,20 @@
+#Importing Libraries
 import urllib.request
 import urllib.error
 import time
 from multiprocessing import Pool
-
+#Capturing start time
 start = time.time()
 
+# Open the file containing URLs in new lines
 file = open('s3.txt', 'r', encoding="ISO-8859-1")
 # here s3.txt contains the URLs which are to be warmed
+#Load URLs
 urls = file.readlines()
-
+#Printing URLs so that one can see the progress while it progresses.
 print(urls)
 
-
+# Logic to hit URL and for warmingthe cache
 def checkurl(url):
     try:
         conn = urllib.request.urlopen(url)
@@ -28,10 +31,11 @@ def checkurl(url):
         # ...
         print('good' + ', ' + url)
 
-
+# Main function
 if __name__ == "__main__":
+    #Defining connection pool
     p = Pool(processes=100)
     #The above line defines the number of consurrent threads you want to run
     result = p.map(checkurl, urls)
-
+#Completion of prgram and printing time to execute this program
 print("done in : ", time.time()-start)
