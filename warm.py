@@ -35,4 +35,4 @@ if __name__ == "__main__":
     #The above line defines the number of consurrent threads you want to run
     result = p.map(checkurl, urls)
 #Completion of program and printing time to execute this program
-print("done in : ", time.time()-start)
+print("Time to execute this program : ", time.time()-start)
