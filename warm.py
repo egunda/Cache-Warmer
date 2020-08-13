@@ -37,5 +37,5 @@ if __name__ == "__main__":
     p = Pool(processes=100)
     #The above line defines the number of consurrent threads you want to run
     result = p.map(checkurl, urls)
-#Completion of prgram and printing time to execute this program
+#Completion of program and printing time to execute this program
 print("done in : ", time.time()-start)
