@@ -19,17 +19,14 @@ def checkurl(url):
     try:
         conn = urllib.request.urlopen(url)
     except urllib.error.HTTPError as e:
-        # Return code error (e.g. 404, 501, ...)
-        # ...
+        # Return 4xx or 5xx error
         print('HTTPError: {}'.format(e.code) + ', ' + url)
     except urllib.error.URLError as e:
-        # Not an HTTP-specific error (e.g. connection refused)
-        # ...
+        # If network layer error
         print('URLError: {}'.format(e.reason) + ', ' + url)
     else:
-        # 200
-        # ...
-        print('good' + ', ' + url)
+        # For 200 response
+        print('Success with ' + ', ' + url)
 
 # Main function
 if __name__ == "__main__":
