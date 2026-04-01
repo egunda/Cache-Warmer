@@ -3,3 +3,7 @@ This is a simple Cache Warming script used for warming the CDN cache for your co
 
 This is a multi-threaded script which runs very fast. 
 For a t2.medium instance, you may run this at 400 threads. You may run this Python script on Spot instance to save running cost, This requires Python3.
+
+
+For hls-warm.py and cache-warm-with-logs.py, you will need youtube-dl. Running the following to install it.
+pip install youtube-dl
